@@ -1,0 +1,137 @@
+/*
+ * @Author: your name
+ * @Date: 2020-06-09 17:18:08
+ * @LastEditTime: 2020-06-12 15:46:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \multi-entry-react-app\src\museum\mock\xncglist.js
+ */
+
+import Mock from "mockjs";
+export default Mock.mock("/museum/xncg/list", {
+    status: 200,
+    data: {
+        xncg: [
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+            {
+                "title|1-5": "@name",
+                path: "@url",
+                imgUrl: "@url",
+                country: "中国",
+                museum: "中国国家科技馆",
+                joinNum: 12306,
+                isVr: true,
+                "id|1-100": 100,
+            },
+        ],
+    },
+});

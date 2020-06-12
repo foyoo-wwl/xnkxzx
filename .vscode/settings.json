@@ -1,2 +1,7 @@
 {
+    "jshint.config": "false",
+    "jshint.exclude": {
+    
+    },
+    "jshint.enable": false
 }

@@ -1,0 +1,24 @@
+.card {
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+  margin-bottom: 10px;
+}
+.compList {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.voteSec {
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  color: orange;
+  margin: 5px;
+}

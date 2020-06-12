@@ -1,0 +1,132 @@
+.home_wrap {
+    width: 100%;
+    overflow: hidden;
+    // 轮播图
+    .slide_section {
+        width: 1260px;
+        height: 480px;
+        margin: 30px auto;
+        border-radius: 10px;
+        overflow: hidden;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            .swiper-slide {
+                position: relative;
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                }
+                .banner_mask {
+                    width: 100%;
+                    height: 70px;
+                    background: url(./../img/banner_mask.png) 0 0 no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    bottom: 0;
+                    display: flex;
+                    align-items: center;
+                    padding-top: 30px;
+                }
+                .hot {
+                    width: 51px;
+                    height: 24px;
+                    padding-left: 40px;
+                }
+                .banner_text {
+                    font-family: "微软雅黑";
+                    font-size: 24px;
+                    color: #fff;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    padding-left: 10px;
+                }
+            }
+            .banner_next {
+                width: 60px;
+                height: 60px;
+                background: url(./../img/sw_prev.png) 0 0 no-repeat;
+                background-size: 100% 100%;
+                outline: none;
+            }
+            .banner_prev {
+                width: 60px;
+                height: 60px;
+                background: url(./../img/sw_next.png) 0 0 no-repeat;
+                background-size: 100% 100%;
+                outline: none;
+            }
+        }
+    }
+    .xnkjg_section {
+        width: 1260px;
+        margin: 0 auto;
+
+        .xnkjg_list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .zxkcWrap {
+        width: 1260px;
+        margin: 0 auto 25px;
+        .xnkjg_list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .zxkcBox {
+        height: 410px;
+        margin: 50px 0 40px;
+        width: 100%;
+        background: #f8fafc;
+    }
+    .kxhdalWrap {
+        width: 1260px;
+        margin: 0 auto 25px;
+        .xnkjg_list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .kjzyWrap {
+        width: 1260px;
+        margin: 0 auto;
+        .xnkjg_list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+    .zthdWrap {
+        width: 1260px;
+        margin: 0 auto 60px;
+        .xnkjg_list {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .zthd_comm {
+                width: 406px;
+                height: 150px;
+                display: inline-block;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

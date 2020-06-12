@@ -1,0 +1,66 @@
+.etzx_wrap {
+    width: 1260px;
+    overflow: hidden;
+    margin: 0 auto;
+    .breadcrumb {
+        width: 1260px;
+        margin: 20px auto;
+    }
+    .listWrap {
+        width: 1260px;
+        margin: 50px auto 20px;
+        .listContent {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .menuContent {
+        border: 1px solid #dfe9f5;
+        border-radius: 10px;
+        background: #fff;
+        margin-top: 30px;
+        padding: 8px 20px;
+        .sort_comm {
+            display: flex;
+            padding: 12px 0;
+            .sort_title {
+                min-width: 70px;
+                color: #5b6571;
+                font-size: 16px;
+                font-family: "微软雅黑";
+                font-weight: bold;
+                padding: 6px 9px;
+            }
+            .sort_category {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                span {
+                    padding: 6px 9px;
+                    color: #5b6571;
+                    font-size: 16px;
+                    font-family: "微软雅黑";
+                    margin-left: 22.5px;
+                    cursor: pointer;
+                }
+                // span:first-child {
+                //     margin-left: 0;
+                // }
+                .active {
+                    color: #ff6000;
+                    background: #ffe7d4;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    .pagination {
+        margin: 0 auto 30px;
+        text-align: center;
+    }
+    .compList {
+        margin-top: 50px;
+    }
+}
