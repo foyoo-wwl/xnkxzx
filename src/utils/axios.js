@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-08 14:44:36
- * @LastEditTime: 2020-06-11 15:54:05
+ * @LastEditTime: 2020-06-17 10:07:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \multi-entry-react-app\src\utils\axios.js
@@ -43,7 +43,7 @@ let axiosUrl = "http://edusoho.yanmeiculture.com/api/index";
 //     });
 // }
 
-export function axiosPost(obj) {
+export function axiosPost(url, obj) {
     var instance = axios.create(
         {
             headers: {
@@ -57,9 +57,8 @@ export function axiosPost(obj) {
         }
     );
     return new Promise((resolve, reject) => {
-        const _url = axiosUrl;
         instance
-            .post(_url, obj)
+            .post(url, obj)
             .then(response => {
                 resolve(response.data);
             })

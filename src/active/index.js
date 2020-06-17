@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-05 09:34:46
- * @LastEditTime: 2020-06-11 15:29:30
+ * @LastEditTime: 2020-06-16 10:29:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \multi-entry-react-app\src\h5\index.js
@@ -10,7 +10,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Switch, Route } from "react-router-dom";
-
+import "./index.less";
 import "normalize.css";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import Index from "./index/index";

@@ -64,28 +64,36 @@ const Xncg = memo(() => {
         });
     }, []);
 
+    useEffect(() => {
+        axiosGet("http://virtsci.yanmeiculture.com/apimuseum/xncg/list").then(
+            res => {
+                console.log(res);
+            }
+        );
+    }, []);
     const getList = useCallback(() => {
-        axios
-            .get("/museum/xncg/list")
-            .then(res => {
-                setListArr(res.data.data.xncg);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        // axios
+        //     .get("/museum/xncg/list")
+        //     .then(res => {
+        //         setListArr(res.data.data.xncg);
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     });
+        axiosGet("http://virtsci.yanmeiculture.com/api/museum/index").then(
+            res => {
+                setListArr(res);
+            }
+        );
     }, []);
 
     // 修改州id
     const changeContinentIndex = (index, id) => {
-        console.log(initArr);
         const _continentArr = { ...JSON.parse(JSON.stringify(initArr)) }
             .continent;
         const _kxhdArr = { ...kxhdArr };
         const _selectId = { ...selectId };
         const _menuIndexs = { ...menuIndexs };
-
-        console.log(_continentArr);
-
         _selectId.continentId = id;
         _selectId.contryId = _continentArr[index].list[0].countryId;
 
@@ -106,7 +114,6 @@ const Xncg = memo(() => {
         const _menuIndexs = { ...menuIndexs };
         const _kxhdMenu = { ...kxhdArr };
         const _selectId = { ...selectId };
-
         _selectId.contryId = id;
 
         _kxhdMenu.continent[_menuIndexs.continentIndex].list[0].isSelectd = 0;
@@ -142,8 +149,8 @@ const Xncg = memo(() => {
                 {kxhdArr.continent && (
                     <Fragment>
                         <div className="sort_comm">
-                            <div class="sort_title">州别：</div>
-                            <div class="sort_category">
+                            <div className="sort_title">州别：</div>
+                            <div className="sort_category">
                                 {kxhdArr.continent.map((item, index) => {
                                     return (
                                         <span
@@ -165,8 +172,8 @@ const Xncg = memo(() => {
                             </div>
                         </div>
                         <div className="sort_comm">
-                            <div class="sort_title">国家：</div>
-                            <div class="sort_category">
+                            <div className="sort_title">国家：</div>
+                            <div className="sort_category">
                                 {kxhdArr.continent[
                                     menuIndexs.continentIndex
                                 ].list.map((item, index) => {

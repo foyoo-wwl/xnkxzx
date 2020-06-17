@@ -1,63 +1,126 @@
-.etzx_wrap {
-  width: 1260px;
-  overflow: hidden;
-  margin: 0 auto;
+@media screen and (min-width: 750px) {
+  .etzx_wrap {
+    width: 1260px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .etzx_wrap .breadcrumb {
+    width: 1260px;
+    margin: 20px auto;
+  }
+  .etzx_wrap .listWrap {
+    width: 1260px;
+    margin: 50px auto 20px;
+  }
+  .etzx_wrap .listWrap .listContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .etzx_wrap .menuContent {
+    border: 1px solid #dfe9f5;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 30px;
+    padding: 8px 20px;
+  }
+  .etzx_wrap .menuContent .sort_comm {
+    display: flex;
+    padding: 12px 0;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_title {
+    min-width: 70px;
+    color: #5b6571;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    padding: 6px 9px;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_category {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_category span {
+    padding: 6px 9px;
+    color: #5b6571;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    margin-left: 22.5px;
+    cursor: pointer;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_category .active {
+    color: #ff6000;
+    background: #ffe7d4;
+    border-radius: 5px;
+  }
+  .etzx_wrap .pagination {
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+  .etzx_wrap .compList {
+    margin-top: 50px;
+  }
 }
-.etzx_wrap .breadcrumb {
-  width: 1260px;
-  margin: 20px auto;
-}
-.etzx_wrap .listWrap {
-  width: 1260px;
-  margin: 50px auto 20px;
-}
-.etzx_wrap .listWrap .listContent {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.etzx_wrap .menuContent {
-  border: 1px solid #dfe9f5;
-  border-radius: 10px;
-  background: #fff;
-  margin-top: 30px;
-  padding: 8px 20px;
-}
-.etzx_wrap .menuContent .sort_comm {
-  display: flex;
-  padding: 12px 0;
-}
-.etzx_wrap .menuContent .sort_comm .sort_title {
-  min-width: 70px;
-  color: #5b6571;
-  font-size: 16px;
-  font-family: "微软雅黑";
-  font-weight: bold;
-  padding: 6px 9px;
-}
-.etzx_wrap .menuContent .sort_comm .sort_category {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.etzx_wrap .menuContent .sort_comm .sort_category span {
-  padding: 6px 9px;
-  color: #5b6571;
-  font-size: 16px;
-  font-family: "微软雅黑";
-  margin-left: 22.5px;
-  cursor: pointer;
-}
-.etzx_wrap .menuContent .sort_comm .sort_category .active {
-  color: #ff6000;
-  background: #ffe7d4;
-  border-radius: 5px;
-}
-.etzx_wrap .pagination {
-  margin: 0 auto 30px;
-  text-align: center;
-}
-.etzx_wrap .compList {
-  margin-top: 50px;
+@media screen and (max-width: 750px) {
+  .etzx_wrap {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .etzx_wrap .breadcrumb {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .etzx_wrap .listWrap {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .etzx_wrap .menuContent {
+    width: 95%;
+    border: 1px solid #dfe9f5;
+    border-radius: 10px;
+    background: #fff;
+    margin: 32px auto 20px;
+    padding: 8px auto;
+  }
+  .etzx_wrap .menuContent .sort_comm {
+    display: flex;
+    padding: 12px 0;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_title {
+    min-width: 70px;
+    color: #5b6571;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    padding: 6px 9px;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_category {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_category span {
+    padding: 3px 9px;
+    color: #5b6571;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    margin-right: 12.5px;
+    cursor: pointer;
+  }
+  .etzx_wrap .menuContent .sort_comm .sort_category .active {
+    color: #ff6000;
+    background: #ffe7d4;
+    border-radius: 5px;
+  }
+  .etzx_wrap .pagination {
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+  .etzx_wrap .compList {
+    width: 95%;
+    margin: 0 auto;
+  }
 }

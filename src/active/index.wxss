@@ -1,0 +1,5 @@
+.activeWrap {
+  width: 100%;
+  background-color: #f8fafc;
+  overflow: hidden;
+}

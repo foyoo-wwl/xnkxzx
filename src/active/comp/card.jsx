@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, Fragment } from "react";
 
 import "./index.less";
 import { NavLink } from "react-router-dom";
@@ -13,45 +13,66 @@ const Card = memo(props => {
         tab,
         chageTab,
         index,
+        title,
     } = props;
     return (
-        <div className="card">
-            <div className="imgWrap">{imgUrl}</div>
-            <div className="cardContent">
-                <div className="h1">{abstract}</div>
-                <div className="h1">
-                    {time}=={specialId}
+        <div className="activeCard">
+            <div className="activeTop">
+                <div className="imgWrap">
+                    <img src="./img/component/active/wqhd.png" alt="" />
+                </div>
+                <div className="topContent">
+                    <div className="title">{title}</div>
+                    <div className="abstract">{abstract}</div>
+                    <div className="more">
+                        <a href="www.baidu.com">更多&gt;&gt;</a>
+                    </div>
+                    <div className="time">{time}</div>
+                    <div className="btnWrap">
+                        <div className="tabbtns">
+                            <div
+                                className={tab === 1 ? "activeBtn" : ""}
+                                onClick={() => chageTab(index, 1)}
+                            >
+                                活动规则
+                            </div>
+                            <div
+                                className={tab === 2 ? "activeBtn" : ""}
+                                onClick={() => chageTab(index, 2)}
+                            >
+                                学习资源
+                            </div>
+                        </div>
+                        <div className="goDetail">
+                            <NavLink to={"/detail/" + specialId}>
+                                点击进入
+                            </NavLink>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="cardTab">
-                <h2>
-                    <NavLink to={"/detail/" + specialId}>详情</NavLink>
-                </h2>
-                <div className="tabbtns">
-                    <button onClick={() => chageTab(index, 1)}>活动规则</button>
-                    <button onClick={() => chageTab(index, 0)}>学习资源</button>
-                </div>
-                <div className="resource">
-                    {tab === 1 ? (
-                        <div className="ruleWrap">
-                            <h1>{rule.ruleTitle}</h1>
-                            <p>{rule.rulesDesc}</p>
-                        </div>
-                    ) : (
-                        <div className="resourceWrap">
-                            <h2>{resources.title}</h2>
-                            <u>
-                                {resources.resourcesList.list.map(item => {
-                                    return (
-                                        <li key={item.id + "=" + item.path}>
-                                            {item.title}
-                                        </li>
-                                    );
-                                })}
-                            </u>
-                        </div>
-                    )}
-                </div>
+                {tab === 1 ? (
+                    <div className="ruleWrap">
+                        <div className="title">{rule.ruleTitle}</div>
+                        <div className="desc">{rule.rulesDesc}</div>
+                    </div>
+                ) : tab === 2 ? (
+                    <div className="resourceWrap">
+                        <div className="title">{resources.title}</div>
+                        <ul>
+                            {resources.resourcesList.list.map(item => {
+                                return (
+                                    <a key={item.id + "=" + item.path} href="1">
+                                        {item.title}
+                                    </a>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                ) : (
+                    ""
+                )}
             </div>
         </div>
     );

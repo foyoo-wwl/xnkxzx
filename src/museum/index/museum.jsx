@@ -4,7 +4,6 @@ import axios from "axios";
 import "./index.less";
 import "./../mock/indexMock";
 import CommList from "./commList";
-import KjzxCard from "./kjzxCard";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import { Breadcrumb } from "antd";
 import Title from "./../../component/commonTitle";

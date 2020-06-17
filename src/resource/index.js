@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-05 09:34:46
- * @LastEditTime: 2020-06-12 16:21:51
+ * @LastEditTime: 2020-06-17 09:15:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \multi-entry-react-app\src\pc\index.js
@@ -19,6 +19,8 @@ import Kpbg from "./kpbg";
 
 import Header from "./../component/header";
 import Footer from "./../component/footer";
+import VideoDetail from "./content/video";
+import VideoDetailList from "./content/videoList";
 
 class App extends Component {
     render() {
@@ -30,6 +32,11 @@ class App extends Component {
                         <Route exact path="/" component={Etzx} />
                         <Route path="/etzx" component={Etzx} />
                         <Route path="/kpbg" component={Kpbg} />
+                        <Route path="/detail/:id" component={VideoDetail} />
+                        <Route
+                            path="/detaillist/:id"
+                            component={VideoDetailList}
+                        />
                     </Switch>
                 </HashRouter>
                 <Footer />

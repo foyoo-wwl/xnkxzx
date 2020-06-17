@@ -2,6 +2,7 @@
 import React, { memo, useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "../mock/listmock";
+import { Breadcrumb } from "antd";
 
 import CommList from "./../comp/list";
 
@@ -24,6 +25,14 @@ const Index = memo(() => {
     });
     return (
         <div className="indexWrap">
+            <div className="breadcrumb">
+                <Breadcrumb>
+                    <Breadcrumb.Item>
+                        <a href="/index.html">首页</a>
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item>主题活动</Breadcrumb.Item>
+                </Breadcrumb>
+            </div>
             <div className="activeWrap">
                 {activeArr.length > 0 && (
                     <CommList ListArr={activeArr} chageTab={chageTab} />

@@ -13,14 +13,13 @@ import { axiosPost } from "./../../utils/axios";
 
 import "./../mock";
 import "./index.less";
-
 const HomeWrap = memo(() => {
     const [homeArr, setHomeArr] = useState({});
     useEffect(() => {
         axios
             .get("/api")
             .then(res => {
-                setHomeArr(res.data.data);
+                // setHomeArr(res.data.data);
                 console.log(res.data.data);
             })
             .catch(err => {
@@ -28,16 +27,17 @@ const HomeWrap = memo(() => {
             });
     }, []);
     useEffect(() => {
-        axiosPost().then(res => {
+        axiosPost("http://edusoho.yanmeiculture.com/api/index").then(res => {
             console.log(res);
+            setHomeArr(res);
         });
     }, []);
     return (
         <div className="home_wrap">
-            {homeArr.slider && (
+            {homeArr.slide && (
                 <Fragment>
                     <div className="sliderWrap">
-                        <Slider sliderData={homeArr.slider} />
+                        <Slider sliderData={homeArr.slide} />
                     </div>
                     <Xnkjg xnkjgData={homeArr.xnkjg} />
                     <div className="zxkcBox">
@@ -45,7 +45,7 @@ const HomeWrap = memo(() => {
                     </div>
                     <Kxhdal kxhdalData={homeArr.kxhdal} />
                     <Kjzy kjztData={homeArr.kjzy} />
-                    <Zthd zthdData={homeArr.zthd} />
+                    {/* <Zthd zthdData={homeArr.zthd} /> */}
                 </Fragment>
             )}
         </div>

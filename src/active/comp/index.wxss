@@ -1,24 +1,372 @@
-.card {
-  width: 300px;
-  height: 300px;
-  background-color: pink;
-  margin-bottom: 10px;
+@media screen and (min-width: 750px) {
+  .activeCard {
+    width: 1260px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .activeCard .activeTop {
+    width: 1260px;
+    height: 280px;
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+  .activeCard .activeTop .imgWrap {
+    width: 620px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .activeCard .activeTop .imgWrap img {
+    width: 100%;
+  }
+  .activeCard .activeTop .topContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 45px;
+    justify-content: center;
+    align-items: center;
+  }
+  .activeCard .activeTop .topContent .title {
+    width: 100%;
+    font-size: 24px;
+    color: #5b6571;
+    font-weight: bold;
+  }
+  .activeCard .activeTop .topContent .abstract {
+    width: 100%;
+    font-size: 12px;
+    color: #5b6571;
+    line-height: 20px;
+  }
+  .activeCard .activeTop .topContent .more {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .activeCard .activeTop .topContent .more a {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #ff6000;
+  }
+  .activeCard .activeTop .topContent .time {
+    width: 100%;
+    font-size: 12px;
+    color: #5b6571;
+    margin: 20px 0 30px;
+  }
+  .activeCard .activeTop .topContent .btnWrap {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .activeCard .activeTop .topContent .btnWrap .tabbtns {
+    width: 200px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .activeCard .activeTop .topContent .btnWrap .tabbtns div {
+    width: 87px;
+    height: 28px;
+    border: 1px solid #007dde;
+    background-color: #fff;
+    color: #007dde;
+    font-size: 17px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .activeCard .activeTop .topContent .btnWrap .tabbtns .activeBtn {
+    background-color: #007dde;
+    color: #fff;
+  }
+  .activeCard .activeTop .topContent .btnWrap .goDetail {
+    width: 170px;
+    height: 100%;
+    background-color: #00b17d;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 48px;
+  }
+  .activeCard .activeTop .topContent .btnWrap .goDetail a {
+    color: #fff;
+    font-size: 18px;
+  }
+  .activeCard .ruleWrap {
+    width: 1258px;
+    border-radius: 8px;
+    border: 1px solid #007dde;
+    margin-top: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: #fff;
+  }
+  .activeCard .ruleWrap .title {
+    width: 100%;
+    font-size: 24px;
+    color: #5b6571;
+    font-weight: bold;
+  }
+  .activeCard .ruleWrap .desc {
+    width: 100%;
+    font-size: 16px;
+    color: #5b6571;
+    line-height: 20px;
+    margin-top: 20px;
+    line-height: 24px;
+  }
+  .activeCard .resourceWrap {
+    width: 1258px;
+    border-radius: 8px;
+    border: 1px solid #007dde;
+    margin-top: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: #fff;
+  }
+  .activeCard .resourceWrap .title {
+    width: 100%;
+    font-size: 24px;
+    color: #5b6571;
+    font-weight: bold;
+  }
+  .activeCard .resourceWrap ul a {
+    width: 100%;
+    font-size: 16px;
+    color: #5b6571;
+    line-height: 20px;
+    margin-top: 20px;
+    line-height: 24px;
+    display: block;
+  }
+  .activeCard .ruleWrap:after {
+    left: 690px;
+    top: -39px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+  }
+  .activeCard .ruleWrap:before {
+    left: 690px;
+    top: -40px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #007dde transparent;
+  }
+  .activeCard .resourceWrap:after {
+    left: 800px;
+    top: -39px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+  }
+  .activeCard .resourceWrap:before {
+    left: 800px;
+    top: -40px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #007dde transparent;
+  }
 }
-.compList {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.voteSec {
-  width: 300px;
-  height: 300px;
-  background-color: pink;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  color: orange;
-  margin: 5px;
+@media screen and (max-width: 750px) {
+  .activeCard {
+    width: 95%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+  }
+  .activeCard .activeTop {
+    width: 100%;
+    border-radius: 7px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .activeCard .activeTop .imgWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .activeCard .activeTop .imgWrap img {
+    width: 100%;
+  }
+  .activeCard .activeTop .topContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+  }
+  .activeCard .activeTop .topContent .title {
+    width: 100%;
+    font-size: 20px;
+    color: #5b6571;
+    font-weight: bold;
+  }
+  .activeCard .activeTop .topContent .abstract {
+    width: 100%;
+    font-size: 14px;
+    color: #5b6571;
+    line-height: 20px;
+  }
+  .activeCard .activeTop .topContent .more {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .activeCard .activeTop .topContent .more a {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #ff6000;
+  }
+  .activeCard .activeTop .topContent .time {
+    width: 100%;
+    font-size: 12px;
+    color: #5b6571;
+    margin: 20px 0 30px;
+  }
+  .activeCard .activeTop .topContent .btnWrap {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .activeCard .activeTop .topContent .btnWrap .tabbtns {
+    width: 200px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .activeCard .activeTop .topContent .btnWrap .tabbtns div {
+    width: 87px;
+    height: 28px;
+    border: 1px solid #007dde;
+    background-color: #fff;
+    color: #007dde;
+    font-size: 17px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .activeCard .activeTop .topContent .btnWrap .tabbtns .activeBtn {
+    background-color: #007dde;
+    color: #fff;
+  }
+  .activeCard .activeTop .topContent .btnWrap .goDetail {
+    width: 2rem;
+    height: 48px;
+    background-color: #00b17d;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 48px;
+  }
+  .activeCard .activeTop .topContent .btnWrap .goDetail a {
+    color: #fff;
+    font-size: 18px;
+  }
+  .activeCard .ruleWrap {
+    width: 95%;
+    border-radius: 8px;
+    border: 1px solid #007dde;
+    margin-top: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: #fff;
+  }
+  .activeCard .ruleWrap .title {
+    width: 100%;
+    font-size: 24px;
+    color: #5b6571;
+    font-weight: bold;
+  }
+  .activeCard .ruleWrap .desc {
+    width: 100%;
+    font-size: 16px;
+    color: #5b6571;
+    line-height: 20px;
+    margin-top: 20px;
+    line-height: 24px;
+  }
+  .activeCard .resourceWrap {
+    width: 95%;
+    border-radius: 8px;
+    border: 1px solid #007dde;
+    margin-top: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: #fff;
+  }
+  .activeCard .resourceWrap .title {
+    width: 100%;
+    font-size: 24px;
+    color: #5b6571;
+    font-weight: bold;
+  }
+  .activeCard .resourceWrap ul a {
+    width: 100%;
+    font-size: 16px;
+    color: #5b6571;
+    line-height: 20px;
+    margin-top: 20px;
+    line-height: 24px;
+    display: block;
+  }
+  .activeCard .ruleWrap:after {
+    left: 0.7rem;
+    top: -39px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+  }
+  .activeCard .ruleWrap:before {
+    left: 0.7rem;
+    top: -40px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #007dde transparent;
+  }
+  .activeCard .resourceWrap:after {
+    left: 2.8rem;
+    top: -39px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+  }
+  .activeCard .resourceWrap:before {
+    left: 2.8rem;
+    top: -40px;
+    position: absolute;
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #007dde transparent;
+  }
 }

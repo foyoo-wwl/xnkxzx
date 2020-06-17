@@ -1,0 +1,217 @@
+@media screen and (min-width: 750px) {
+    .videoDetailWrap {
+        width: 1260px;
+        margin: 0 auto;
+        .breadcrumb {
+            width: 1260px;
+            margin: 20px auto;
+        }
+        .video_content {
+            width: 1180px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            .videoSec {
+                .title {
+                    width: 100%;
+                    font-size: 24px;
+                    text-align: center;
+                }
+                .sourceSec {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 30px;
+                    .time {
+                        margin-left: 58px;
+                    }
+                }
+                .player {
+                    width: 700px;
+                    height: 390px;
+                    margin-top: 30px;
+                }
+                .tags {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 30px auto;
+                    .tag {
+                        border: 1px solid #ffa92e;
+                        margin-right: 25px;
+                        font-size: 14px;
+                        padding: 6px 13px;
+                    }
+                }
+            }
+        }
+        .videoDown {
+            width: 430px;
+            overflow: hidden;
+            background-color: #f8f8fa;
+            position: relative;
+            .h1 {
+                width: 100%;
+                height: 40px;
+                background-color: #d4f5eb;
+                font-size: 22px;
+                color: #6f7e85;
+                text-align: center;
+                line-height: 40px;
+            }
+            .detailContent {
+                width: 340px;
+                margin: 40px auto 0;
+                .title {
+                    font-size: 20px;
+                    text-align: center;
+                }
+                .desc {
+                    margin-top: 18px;
+                }
+            }
+            .downBtn {
+                width: 172px;
+                height: 48px;
+                text-align: center;
+                line-height: 48px;
+                background-color: #00b17d;
+                border-radius: 5px;
+                margin: 50px auto;
+                color: #fff;
+                font-size: 24px;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                cursor: pointer;
+            }
+        }
+        .videoList {
+            padding: 30px;
+            .videoLink {
+                height: 60px;
+                font-size: 16px;
+                font-family: "microsoft yahei";
+                color: #000;
+                line-height: 60px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                border-top: 1px solid #cccccc;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .videoDetailWrap {
+        width: 100%;
+        margin: 0 auto;
+        .breadcrumb {
+            width: 95%;
+            margin: 20px auto;
+        }
+        .video_content {
+            width: 95%;
+            margin: 0 auto;
+            .videoSec {
+                .title {
+                    width: 100%;
+                    font-size: 24px;
+                    text-align: center;
+                }
+                .sourceSec {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 30px;
+                    .time {
+                        margin-left: 58px;
+                    }
+                }
+                .player {
+                    width: 95%;
+                    margin: 30px auto;
+                }
+                .tags {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 30px auto;
+                    flex-wrap: wrap;
+                    .tag {
+                        border: 1px solid #ffa92e;
+                        margin-right: 25px;
+                        font-size: 14px;
+                        padding: 6px 13px;
+                    }
+                }
+            }
+        }
+        .videoDown {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f8f8fa;
+            position: relative;
+            padding-bottom: 100px;
+            margin-bottom: 50px;
+            .h1 {
+                width: 100%;
+                height: 40px;
+                background-color: #d4f5eb;
+                font-size: 22px;
+                color: #6f7e85;
+                text-align: center;
+                line-height: 40px;
+            }
+            .detailContent {
+                width: 95%;
+                margin: 40px auto 0;
+                .title {
+                    font-size: 20px;
+                    text-align: center;
+                }
+                .desc {
+                    margin-top: 18px;
+                }
+            }
+            .downBtn {
+                width: 172px;
+                height: 48px;
+                text-align: center;
+                line-height: 48px;
+                background-color: #00b17d;
+                border-radius: 5px;
+                margin: 50px auto;
+                color: #fff;
+                font-size: 24px;
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                cursor: pointer;
+            }
+        }
+        .videoList {
+            width: 95%;
+            margin: 0 auto 30px;
+            .videoLink {
+                height: 60px;
+                font-size: 16px;
+                font-family: "microsoft yahei";
+                color: #000;
+                line-height: 60px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                border-top: 1px solid #cccccc;
+            }
+        }
+    }
+}

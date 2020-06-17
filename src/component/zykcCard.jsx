@@ -35,9 +35,12 @@ const ZykcCard = memo(props => {
             <div className="zykc_evaluate">
                 <div
                     className="evaluate_x"
-                    style={{ backgroundPosition: `left ${-star * 40}px` }}
+                    style={{ backgroundPosition: `left ${star * 40 - 200}px` }}
                 ></div>
-                <div className="evaluate_num">{comment}人评价</div>
+                <div className="evaluate_num">
+                    {star}
+                    {comment}人评价
+                </div>
             </div>
         </a>
     );

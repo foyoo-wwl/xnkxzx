@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-09 09:40:52
- * @LastEditTime: 2020-06-11 14:12:45
+ * @LastEditTime: 2020-06-16 11:14:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \multi-entry-react-app\src\active\mock.js
@@ -12,12 +12,14 @@ export default Mock.mock("/active/list", {
     data: [
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -49,12 +51,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -86,12 +90,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -123,12 +129,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -160,12 +168,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -197,12 +207,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -234,12 +246,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -271,12 +285,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -308,12 +324,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",
@@ -345,12 +363,14 @@ export default Mock.mock("/active/list", {
         },
         {
             imgUrl: "@url",
-            "abstract|20-40": "标题",
+            time: "@time",
+            "abstract|40-60": "标题",
             "specialId|1-100": 100,
-            tab: 1,
+            title: "标题标题标题标题标题标题",
+            tab: 0,
             rule: {
                 ruleTitle: "标题标题标题标题标题标题",
-                "rulesDesc|20-40": "标题",
+                "rulesDesc|60-100": "标题",
             },
             resources: {
                 title: "标题标题标题标题标题标题",

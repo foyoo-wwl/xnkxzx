@@ -167,8 +167,8 @@ const Zxkjzx = memo(() => {
                 {kxhdArr.continent && (
                     <Fragment>
                         <div className="sort_comm">
-                            <div class="sort_title">州别：</div>
-                            <div class="sort_category">
+                            <div className="sort_title">州别：</div>
+                            <div className="sort_category">
                                 {kxhdArr.continent.map((item, index) => {
                                     return (
                                         <span
@@ -190,8 +190,8 @@ const Zxkjzx = memo(() => {
                             </div>
                         </div>
                         <div className="sort_comm">
-                            <div class="sort_title">国家：</div>
-                            <div class="sort_category">
+                            <div className="sort_title">国家：</div>
+                            <div className="sort_category">
                                 {kxhdArr.continent[
                                     menuIndexs.continentIndex
                                 ].list.map((item, index) => {
@@ -215,8 +215,8 @@ const Zxkjzx = memo(() => {
                             </div>
                         </div>
                         <div className="sort_comm">
-                            <div class="sort_title">学科：</div>
-                            <div class="sort_category">
+                            <div className="sort_title">学科：</div>
+                            <div className="sort_category">
                                 {kxhdArr.subject.map((item, index) => {
                                     return (
                                         <span

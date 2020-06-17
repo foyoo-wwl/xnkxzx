@@ -6,6 +6,7 @@ import "../mock/listmock";
 import "../mock/yearmock";
 import CommList from "./../comp/list";
 import "./index.less";
+import { Breadcrumb } from "antd";
 
 const Previous = memo(() => {
     const [activeArr, setActiveArr] = useState([]);
@@ -48,17 +49,28 @@ const Previous = memo(() => {
     };
     return (
         <div className="indexWrap">
-            {yearArr.length > 0 && (
-                <div className="nav">
+            <div className="breadcrumb">
+                <Breadcrumb>
+                    <Breadcrumb.Item>
+                        <a href="/index.html">首页</a>
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item>
+                        <a href="/active.html">主题活动</a>
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item>往期专题</Breadcrumb.Item>
+                </Breadcrumb>
+            </div>
+            {yearArr.length && (
+                <div className="zthd_year">
                     {yearArr.map((item, index) => {
                         return (
-                            <span
+                            <div
                                 key={item.id + "=" + index}
-                                className={item.isSelected === 1 ? "red" : ""}
                                 onClick={() => changeYearIndex(index, item.id)}
+                                className={item.isSelected ? "y1" : "y2"}
                             >
                                 {item.title}
-                            </span>
+                            </div>
                         );
                     })}
                 </div>
