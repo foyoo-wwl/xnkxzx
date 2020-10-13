@@ -136,7 +136,6 @@
     align-items: center;
   }
   .zxkjzx_wrap .xnkjg_comm .xnkjg_address .xnkjg_addressL img {
-    width: 13px;
     height: 14px;
     padding-right: 5px;
   }

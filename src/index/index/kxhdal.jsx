@@ -7,21 +7,35 @@ import KxhdalCard from "./../../component/kxhdalCard";
 import Title from "./../../component/commonTitle";
 import "./index.less";
 const Kxhdal = memo(props => {
-    const { kxhdalData } = props;
+    const { kxhdalData, language } = props;
+    const [title, setTitle] = useState();
+    useEffect(() => {
+        if (language === "en") {
+            setTitle("Teaching Resources");
+        } else {
+            setTitle(kxhdalData.title);
+        }
+    }, []);
     return (
         <div className="kxhdalWrap">
             <Title
                 imgUrl={"kxhdal/kxhdal_logo.png"}
-                title={kxhdalData.title}
-                moreLink={kxhdalData.moreLink}
+                title={title}
+                moreLink="/kjzy.html"
+                language={language}
             />
             <div className="xnkjg_list">
                 {kxhdalData.list.map(item => {
-                    return <KxhdalCard key={item.id} {...item} />;
+                    return (
+                        <KxhdalCard
+                            key={item.id}
+                            {...item}
+                            language={language}
+                        />
+                    );
                 })}
             </div>
         </div>
     );
 });
-
 export default Kxhdal;

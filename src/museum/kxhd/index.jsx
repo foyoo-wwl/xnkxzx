@@ -7,10 +7,10 @@ import axios from "axios";
 import "./index.less";
 import "./../mock/kxhdMenu";
 import "./../mock/kxhdList";
-
-import { axiosGet } from "./../../utils/axios";
+import cookie from "react-cookies";
+import { axiosGet, axiosPost } from "./../../utils/axios";
 import CommList from "./../comp/kxhdList";
-import { Breadcrumb, Pagination } from "antd";
+import { Breadcrumb, Pagination, Empty, Skeleton } from "antd";
 
 const Kxhd = memo(() => {
     const [kxhdArr, setKxhdArr] = useState({});
@@ -24,35 +24,48 @@ const Kxhd = memo(() => {
     const [initArr, setInitArr] = useState({});
     const [selectId, setSelectId] = useState({
         continentId: 0,
-        contryId: 0,
+        countryId: 0,
         gradeId: 0,
         subjectId: 0,
     });
-
+    const [pageArr, setPageArr] = useState({
+        page: 1,
+        totalPage: 0,
+        pageSize: 1,
+    });
+    const [titleArr, setTitleArr] = useState({
+        breadCrumb: ["首页", "虚拟科技馆", "科学活动"],
+        menu: ["州别", "国家", "学科"],
+    });
+    const [loadFlag, setLoadFlat] = useState(false);
     // 修改州id
     const changeContinentIndex = (index, id) => {
-        console.log(initArr);
-        const _continentArr = { ...JSON.parse(JSON.stringify(initArr)) }
-            .continent;
+        const _continentArr = { ...initArr }.continent;
         const _kxhdArr = { ...kxhdArr };
         const _selectId = { ...selectId };
         const _menuIndexs = { ...menuIndexs };
-
-        console.log(_continentArr);
-
         _selectId.continentId = id;
-        _selectId.contryId = _continentArr[index].list[0].countryId;
-
+        _selectId.countryId = _continentArr[index].list[0].countryId;
+        _continentArr.map(item => {
+            item.list.map((li, liIndex) => {
+                if (liIndex > 0) {
+                    li.isSelectd = 0;
+                } else {
+                    li.isSelectd = 1;
+                }
+            });
+        });
         _continentArr[0].isSelectd = 0;
         _continentArr[_menuIndexs.continentIndex].isSelectd = 0;
         _continentArr[index].isSelectd = 1;
         _kxhdArr.continent = _continentArr;
         _menuIndexs.continentIndex = index;
-        _menuIndexs.contryIndex = 0;
+        _menuIndexs.countryIndex = 0;
 
         setKxhdArr(_kxhdArr);
         setSelectId(_selectId);
         setMenuIndexs(_menuIndexs);
+        getList(_selectId, 1);
     };
     // 修改国家Id
     const changeCountryIndex = (index, id) => {
@@ -60,7 +73,7 @@ const Kxhd = memo(() => {
         const _kxhdMenu = { ...kxhdArr };
         const _selectId = { ...selectId };
 
-        _selectId.contryId = id;
+        _selectId.countryId = id;
 
         _kxhdMenu.continent[_menuIndexs.continentIndex].list[0].isSelectd = 0;
         _kxhdMenu.continent[_menuIndexs.continentIndex].list[
@@ -75,6 +88,7 @@ const Kxhd = memo(() => {
         setKxhdArr(_kxhdMenu);
         setSelectId(_selectId);
         setMenuIndexs(_menuIndexs);
+        getList(_selectId, 1);
     };
 
     // 修改subject
@@ -94,6 +108,7 @@ const Kxhd = memo(() => {
         setKxhdArr(_kxhdMenu);
         setSelectId(_selectId);
         setMenuIndexs(_menuIndexs);
+        getList(_selectId, 1);
     };
 
     // 修改greade id
@@ -113,14 +128,22 @@ const Kxhd = memo(() => {
         setKxhdArr(_kxhdMenu);
         setSelectId(_selectId);
         setMenuIndexs(_menuIndexs);
+        getList(_selectId, 1);
     };
     // 初始化目录列表
     useEffect(() => {
-        axiosGet("http://virtsci.yanmeiculture.com/api/index").then(res => {
+        let _cookie = null;
+        if (cookie.load("_locale")) {
+            _cookie = cookie.load("_locale");
+        } else {
+            _cookie = "zh_CN";
+        }
+
+        axiosGet(window.baseUrl + "/api/index?local=" + _cookie).then(res => {
             const _selectId = { ...selectId };
             const _res = res;
             _selectId.continentId = _res.continent[0].continentId;
-            _selectId.contryId = _res.continent[0].list[0].countryId;
+            _selectId.countryId = _res.continent[0].list[0].countryId;
             _selectId.gradeId = _res.grade[0].id;
             _selectId.subjectd = _res.subject[0].id;
             _res.continent.map((item, index) => {
@@ -154,37 +177,65 @@ const Kxhd = memo(() => {
             setSelectId(_selectId);
             setInitArr(_res);
             setKxhdArr(_res);
+            getList(_selectId, 1);
         });
     }, []);
-    useEffect(() => {
-        axios
-            .get("/museum/kxhd/list")
-            .then(res => {
-                console.log(res);
-                setListArr(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
+    const getList = useCallback(
+        (_selectId, page) => {
+            setLoadFlat(false);
+            axiosPost(window.baseUrl + "/api/xnkjg?type=2&page=" + page, {
+                continentId: _selectId.continentId,
+                countryId: _selectId.countryId,
+                gradeId: _selectId.gradeId,
+                subjectId: _selectId.subjectId,
+            }).then(res => {
+                setListArr(res.list);
+                setPageArr({
+                    page: res.page,
+                    totalPage: res.totalPage,
+                    pageSize: 1,
+                });
+                setLoadFlat(true);
             });
+        },
+        [selectId, loadFlag]
+    );
+    // 中英文初始化
+    useEffect(() => {
+        if (cookie.load("_locale") === "en") {
+            setTitleArr({
+                breadCrumb: [
+                    "Home",
+                    "Virtual Science Museum",
+                    "Science Activities",
+                ],
+                menu: ["Area", "Country", "Subject"],
+            });
+        }
     }, []);
+    const onShowSizeChange = current => {
+        getList(selectId, current);
+    };
     return (
         <div className="kxhd_wrap">
             <div className="breadcrumb">
                 <Breadcrumb>
                     <Breadcrumb.Item>
-                        <a href="/index.html">首页</a>
+                        <a href="/index.html">{titleArr.breadCrumb[0]}</a>
                     </Breadcrumb.Item>
                     <Breadcrumb.Item>
-                        <a href="/museum.html">虚拟科技馆</a>
+                        <a href="/museum.html">{titleArr.breadCrumb[1]}</a>
                     </Breadcrumb.Item>
-                    <Breadcrumb.Item>科学活动</Breadcrumb.Item>
+                    <Breadcrumb.Item>{titleArr.breadCrumb[2]}</Breadcrumb.Item>
                 </Breadcrumb>
             </div>
             <div className="menuContent">
-                {kxhdArr.continent && (
+                {kxhdArr.continent ? (
                     <Fragment>
                         <div className="sort_comm">
-                            <div className="sort_title">州别：</div>
+                            <div className="sort_title">
+                                {titleArr.menu[0]}：
+                            </div>
                             <div className="sort_category">
                                 {kxhdArr.continent.map((item, index) => {
                                     return (
@@ -207,7 +258,9 @@ const Kxhd = memo(() => {
                             </div>
                         </div>
                         <div className="sort_comm">
-                            <div className="sort_title">国家：</div>
+                            <div className="sort_title">
+                                {titleArr.menu[1]}：
+                            </div>
                             <div className="sort_category">
                                 {kxhdArr.continent[
                                     menuIndexs.continentIndex
@@ -253,7 +306,9 @@ const Kxhd = memo(() => {
                             </div>
                         </div>
                         <div className="sort_comm">
-                            <div className="sort_title">学科：</div>
+                            <div className="sort_title">
+                                {titleArr.menu[2]}：
+                            </div>
                             <div className="sort_category">
                                 {kxhdArr.subject.map((item, index) => {
                                     return (
@@ -276,12 +331,32 @@ const Kxhd = memo(() => {
                             </div>
                         </div>
                     </Fragment>
+                ) : (
+                    <Skeleton active />
                 )}
             </div>
             <div className="listWrap">
-                {listArr && <CommList ListArr={listArr} />}
+                {loadFlag ? (
+                    <Fragment>
+                        {listArr.length > 0 ? (
+                            <CommList ListArr={listArr} />
+                        ) : (
+                            <Empty />
+                        )}
+                    </Fragment>
+                ) : (
+                    <Skeleton active />
+                )}
             </div>
-            <Pagination defaultCurrent={1} total={50} className="pagination" />
+            {pageArr.totalPage > 1 && (
+                <Pagination
+                    defaultCurrent={pageArr.page}
+                    total={pageArr.totalPage}
+                    pageSize={pageArr.pageSize}
+                    className="pagination"
+                    onChange={onShowSizeChange}
+                />
+            )}
         </div>
     );
 });

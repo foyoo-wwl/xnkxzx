@@ -6,11 +6,17 @@ import React, { memo, useState, useEffect } from "react";
 
 import ZykcCard from "./../../component/zykcCard";
 import Title from "./../../component/commonTitle";
+import cookie from "react-cookies";
 import "./index.less";
 const Zxkc = memo(props => {
-    const { zxkcData } = props;
+    const { zxkcData, language } = props;
+    const [title, setTitle] = useState();
     useEffect(() => {
-        console.log(zxkcData);
+        if (cookie.load("_locale") === "en") {
+            setTitle("Professional Learning");
+        } else {
+            setTitle(zxkcData.title);
+        }
     }, []);
     return (
         <div className="zxkcWrap">
@@ -19,8 +25,9 @@ const Zxkc = memo(props => {
             </div> */}
             <Title
                 imgUrl={"zykc/zykc_logo.png"}
-                title={zxkcData.title}
-                moreLink={zxkcData.moreLink}
+                title={title}
+                moreLink="/course/v2/explore"
+                language={language}
             />
             <div className="xnkjg_list">
                 {zxkcData.list.map(item => {

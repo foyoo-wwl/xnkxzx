@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 import "./common.less";
+import cookie from "react-cookies";
 const ZykcCard = memo(props => {
     const {
         title,
@@ -15,10 +16,17 @@ const ZykcCard = memo(props => {
         isRecommended,
         isLatest,
     } = props;
+    const [cnen, setCnen] = useState("人评价");
+    useEffect(() => {
+        // cookie.save("_locale", "en");
+        if (cookie.load("_locale") === "en") {
+            setCnen("comment");
+        }
+    }, []);
     return (
-        <a className="zykc_comm" href={link}>
+        <a className="zykc_comm" href={"/course/" + id}>
             <div className="zykc_img">
-                <img src="./img/component/zykc/zykc_.png" alt="" />
+                <img src={imgUrl} alt="" />
                 {isHot ? (
                     <div className="zykc_bar bar3">Hot</div>
                 ) : isRecommended ? (
@@ -38,8 +46,8 @@ const ZykcCard = memo(props => {
                     style={{ backgroundPosition: `left ${star * 40 - 200}px` }}
                 ></div>
                 <div className="evaluate_num">
-                    {star}
-                    {comment}人评价
+                    {comment}
+                    {cnen}
                 </div>
             </div>
         </a>

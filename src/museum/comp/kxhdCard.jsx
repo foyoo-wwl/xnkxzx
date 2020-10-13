@@ -22,7 +22,7 @@ const Card = memo(props => {
                     </div>
                     <div className="kxhdal_mask_content">
                         <span>{abstract}</span>
-                        <a href={link} alt={title}>
+                        <a href={"./content.html?type=2&id=" + id} alt={title}>
                             更多
                         </a>
                     </div>

@@ -20,6 +20,7 @@
         "babel-preset-react-app": "^7.0.2",
         "bfj": "6.1.1",
         "case-sensitive-paths-webpack-plugin": "2.2.0",
+        "classnames": "^2.2.6",
         "css-loader": "1.0.0",
         "dotenv": "6.0.0",
         "dotenv-expand": "4.2.0",
@@ -55,7 +56,8 @@
         "postcss-safe-parser": "4.0.1",
         "prettier-eslint": "^8.8.2",
         "react": "^16.8.6",
-        "react-app-polyfill": "^0.2.2",
+        "react-app-polyfill": "^1.0.6",
+        "react-cookies": "^0.1.1",
         "react-dev-utils": "^8.0.0",
         "react-dom": "^16.8.6",
         "react-redux": "^6.0.1",
@@ -80,12 +82,20 @@
         "build": "node scripts/build.js",
         "test": "node scripts/test.js"
     },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ],
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all",
+            "ie 11"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version",
+            "ie 11"
+        ]
+    },
     "jest": {
         "collectCoverageFrom": [
             "src/**/*.{js,jsx,ts,tsx}",

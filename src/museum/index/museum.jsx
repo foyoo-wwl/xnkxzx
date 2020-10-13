@@ -8,60 +8,81 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import { Breadcrumb } from "antd";
 import Title from "./../../component/commonTitle";
 import KxhdalCard from "./../../component/kxhdalCard";
+import { axiosGet } from "./../../utils/axios";
+import cookie from "react-cookies";
+
 const Museum = memo(() => {
     const [indexArr, setIndexArr] = useState({});
+    const [titleArr, setTitleArr] = useState({
+        breadCrumb: ["首页", "虚拟科技馆"],
+        listTitle: ["虚拟科技馆", "最新展项", "科学活动"],
+    });
+    const [language, setLanguage] = useState("zh_CN");
     useEffect(() => {
-        axios
-            .get("/museum/index")
-            .then(res => {
-                //console.log(JSON.stringify(res.data));
-                console.log(res.data.data);
-                setIndexArr(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
+        if (cookie.load("_locale") === "en") {
+            setLanguage("en");
+            setTitleArr({
+                breadCrumb: ["Home", "Virtual Science Museum"],
+                listTitle: [
+                    "Virtual Science Museum",
+                    "dot kown",
+                    "Online Exhibits",
+                ],
             });
+        }
+        axiosGet(window.baseUrl + "/api/xnkjg?uid=" + cookie.load("uuid")).then(
+            res => {
+                setIndexArr(res);
+            }
+        );
     }, []);
+
     return (
         <div className="museunm_wrap">
             <div className="breadcrumb">
                 <Breadcrumb>
                     <Breadcrumb.Item>
-                        <a href="/index.html">首页</a>
+                        <a href="/index.html">{titleArr.breadCrumb[0]}</a>
                     </Breadcrumb.Item>
                     <Breadcrumb.Item>
-                        <a href="/museum.html">虚拟科技馆</a>
+                        <a href="/museum.html">{titleArr.breadCrumb[1]}</a>
                     </Breadcrumb.Item>
                 </Breadcrumb>
             </div>
             {indexArr.xnkjg && (
                 <Fragment>
                     <CommList
-                        title="虚拟科技馆"
+                        title={titleArr.listTitle[0]}
                         icon="museum/icon1.png"
-                        link="www.baidu.com"
-                        listArr={indexArr.xnkjg.splice(0, 3)}
+                        link="/museum.html#/xncg"
+                        listArr={indexArr.xnkjg}
+                        language={language}
+                        type={2}
+                        uid={cookie.load("uuid")}
                     />
-                    <CommList
+                    {/* <CommList
                         title="最新展评"
                         icon="museum/icon2.png"
                         link="www.baidu.com"
                         listArr={indexArr.zxzp.splice(0, 3)}
-                    />
-                    <CommList
-                        title="最新展项"
+                    /> */}
+                    {/* <CommList
+                        title={titleArr.listTitle[1]}
                         icon="museum/icon3.png"
-                        link="www.baidu.com"
-                        listArr={indexArr.zxzx.splice(0, 3)}
-                    />
+                        link="/museum.html#/zxkjzx"
+                        listArr={indexArr.zxzx}
+                        language={language}
+                        type={3}
+                    /> */}
                     <div className="kxhdalWrap">
                         <Title
                             imgUrl="museum/icon3.png"
-                            title="科学活动案例"
-                            moreLink="www.baidu.com"
+                            title={titleArr.listTitle[2]}
+                            moreLink="/museum.html#/kxhd"
+                            language={language}
                         />
                         <div className="hdalContent">
-                            {indexArr.kxhdal.splice(0, 2).map(item => {
+                            {indexArr.kxhdal.map(item => {
                                 return <KxhdalCard {...item} key={item.id} />;
                             })}
                         </div>

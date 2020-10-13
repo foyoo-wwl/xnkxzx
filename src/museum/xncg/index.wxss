@@ -12,10 +12,12 @@
     width: 1260px;
     margin: 50px auto 20px;
   }
+  .xncg_wrap .listWrap .compList {
+    width: 100%;
+  }
   .xncg_wrap .listWrap .listTitle {
     width: 100%;
     height: 50px;
-    background-color: red;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -73,16 +75,19 @@
   }
   .xncg_wrap .xnkjg_comm {
     width: 406px;
-    background: #fff;
-    border-radius: 10px;
+    background-color: #fff;
     overflow: hidden;
     display: block;
     text-decoration: none !important;
     margin-bottom: 30px;
+    float: left;
+    height: 330px;
+    margin-right: 20px;
+    border-radius: 10px;
   }
   .xncg_wrap .xnkjg_comm .xnkjg_img {
     width: 100%;
-    height: 260px;
+    height: 208px;
     position: relative;
     display: block;
   }
@@ -92,6 +97,14 @@
     left: 0;
     width: 48px;
     height: 26px;
+  }
+  .xncg_wrap .xnkjg_comm .collect {
+    width: 20px;
+    margin: 0 20px;
+    cursor: pointer;
+  }
+  .xncg_wrap .xnkjg_comm .collect svg {
+    width: 100%;
   }
   .xncg_wrap .xnkjg_comm .xnkjg_text {
     padding: 0 10px;
@@ -136,7 +149,7 @@
     align-items: center;
   }
   .xncg_wrap .xnkjg_comm .xnkjg_address .xnkjg_addressL img {
-    width: 13px;
+    width: auto;
     height: 14px;
     padding-right: 5px;
   }
@@ -149,6 +162,10 @@
     font-size: 14px;
     font-family: "微软雅黑";
     color: #818c99;
+    width: 80%;
+  }
+  .xncg_wrap .xnkjg_comm:nth-of-type(3n) {
+    margin-right: 0;
   }
 }
 @media screen and (max-width: 750px) {
@@ -212,7 +229,7 @@
     margin: 0 auto 50px;
   }
   .xncg_wrap .xnkjg_comm {
-    width: 406px;
+    width: 7rem;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -222,7 +239,7 @@
   }
   .xncg_wrap .xnkjg_comm .xnkjg_img {
     width: 100%;
-    height: 260px;
+    height: 208px;
     position: relative;
     display: block;
   }
@@ -233,7 +250,16 @@
     width: 48px;
     height: 26px;
   }
+  .xncg_wrap .xnkjg_comm .collect {
+    width: 20px;
+    margin: 0 20px;
+    cursor: pointer;
+  }
+  .xncg_wrap .xnkjg_comm .collect svg {
+    width: 100%;
+  }
   .xncg_wrap .xnkjg_comm .xnkjg_text {
+    flex: 1;
     padding: 0 10px;
     padding-top: 15px;
     display: flex;
@@ -289,5 +315,6 @@
     font-size: 14px;
     font-family: "微软雅黑";
     color: #818c99;
+    width: 80%;
   }
 }

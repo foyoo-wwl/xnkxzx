@@ -1,0 +1,75 @@
+{
+    "data": [
+        {
+            "id": "9",
+            "userId": "2",
+            "type": "global",
+            "content": "系统通知：\nasdfasdfasdfasdfasdf\n&lt;p&gt;asdfasdfasdfasdfasdfasdf&lt;/p&gt;",
+            "createdTime": "2020-07-10T16:33:04+08:00",
+            "data": {
+                "content": "<p>asdfasdfasdfasdfasdfasdf</p>\r\n",
+                "title": "asdfasdfasdfasdfasdf"
+            }
+        },
+        {
+            "id": "10",
+            "userId": "2",
+            "type": "global",
+            "content": "系统通知：\nasdfasdfasdf\n&lt;p&gt;asdfasdfasdf&lt;/p&gt;",
+            "createdTime": "2020-07-10T16:32:56+08:00",
+            "data": {
+                "content": "<p>asdfasdfasdf</p>\r\n",
+                "title": "asdfasdfasdf"
+            }
+        },
+        {
+            "id": "11",
+            "userId": "2",
+            "type": "global",
+            "content": "系统通知：\ncesssss\n&lt;p&gt;cessss&lt;/p&gt;",
+            "createdTime": "2020-07-10T16:32:50+08:00",
+            "data": {
+                "content": "<p>cessss</p>\r\n",
+                "title": "cesssss"
+            }
+        },
+        {
+            "id": "6",
+            "userId": "2",
+            "type": "global",
+            "content": "系统通知：\ntest\n&lt;p&gt;setsetwete&lt;/p&gt;",
+            "createdTime": "2020-07-10T13:18:22+08:00",
+            "data": {
+                "content": "<p>setsetwete</p>\r\n",
+                "title": "test"
+            }
+        },
+        {
+            "id": "3",
+            "userId": "2",
+            "type": "global",
+            "content": "系统通知：\n啊事实上烦烦烦\n&lt;p&gt;啊手动阀手动阀手动阀&lt;/p&gt;",
+            "createdTime": "2020-07-08T17:50:39+08:00",
+            "data": {
+                "content": "<p>啊手动阀手动阀手动阀</p>\r\n",
+                "title": "啊事实上烦烦烦"
+            }
+        },
+        {
+            "id": "2",
+            "userId": "2",
+            "type": "global",
+            "content": "系统通知：\n美国第五天\n&lt;p&gt;想打发士大夫&lt;/p&gt;",
+            "createdTime": "2020-07-08T17:41:12+08:00",
+            "data": {
+                "content": "<p>想打发士大夫</p>\r\n",
+                "title": "美国第五天"
+            }
+        }
+    ],
+    "paging": {
+        "total": 6,
+        "offset": 0,
+        "limit": 10
+    }
+}

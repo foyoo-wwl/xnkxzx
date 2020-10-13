@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-08 14:44:36
- * @LastEditTime: 2020-06-17 10:07:51
+ * @LastEditTime: 2020-06-24 16:05:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \multi-entry-react-app\src\utils\axios.js
@@ -53,7 +53,7 @@ export function axiosPost(url, obj) {
             },
         },
         {
-            withCredentials: false,
+            withCredentials: true,
         }
     );
     return new Promise((resolve, reject) => {
@@ -67,7 +67,7 @@ export function axiosPost(url, obj) {
             });
     });
 }
-export function axiosGet(url) {
+export function axiosGet(url, obj) {
     var instance = axios.create(
         {
             headers: {
@@ -77,12 +77,12 @@ export function axiosGet(url) {
             },
         },
         {
-            withCredentials: false,
+            withCredentials: true,
         }
     );
     return new Promise((resolve, reject) => {
         instance
-            .get(url)
+            .get(url, obj)
             .then(response => {
                 resolve(response.data);
             })
@@ -91,7 +91,32 @@ export function axiosGet(url) {
             });
     });
 }
-
+export function axiosGetToken(token, url, obj) {
+    var instance = axios.create(
+        {
+            headers: {
+                "content-type":
+                    "application/x-www-form-urlencoded;charset=UTF-8",
+                Accept: "application/vnd.edusoho.v2+json",
+                "X-Auth-Token": token,
+                "X-Auth-Client": "web_login",
+            },
+        },
+        {
+            withCredentials: true,
+        }
+    );
+    return new Promise((resolve, reject) => {
+        instance
+            .get(url, obj)
+            .then(response => {
+                resolve(response.data);
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
+}
 function param(data) {
     let url = "";
     for (let k in data) {

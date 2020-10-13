@@ -1,13 +1,23 @@
 import React, { memo } from "react";
 
 const KxhdalCard = memo(props => {
-    const { title, imgUrl, no, museum, country, abstract, link, id } = props;
+    const {
+        title,
+        imgUrl,
+        no,
+        museum,
+        country,
+        abstract,
+        link,
+        id,
+        language,
+    } = props;
     return (
         <div className="kxhdal_comm">
             <div className="kxhdal_img">
-                <img src="./img/component/kxhdal/kxhdal_banner.png" alt="" />
+                <img src={imgUrl} alt="" />
             </div>
-            <div className="kxhdal_G">
+            {/* <div className="kxhdal_G">
                 <div className="box1"></div>
                 <div className="box2"></div>
                 <div className="kxhdal_Gtext">{no}</div>
@@ -21,11 +31,18 @@ const KxhdalCard = memo(props => {
                     </div>
                     <div className="kxhdal_mask_content">
                         <span>{abstract}</span>
-                        <a href={link} alt={title}>
-                            更多
+                        <a
+                            href={"./kjzylist.html?typeid=60&parentid=" + id}
+                            alt={title}
+                        >
+                            {language === "en" ? "more" : "更多"}
                         </a>
                     </div>
                 </div>
+            </div> */}
+            <div className="kxhdal_content">
+                <div className="title">{title}</div>
+                <div className="abstract">{abstract}</div>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-11 09:57:51
- * @LastEditTime: 2020-06-12 16:18:59
+ * @LastEditTime: 2020-09-21 16:24:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \multi-entry-react-app\src\resource\comp\list.js

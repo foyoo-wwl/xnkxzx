@@ -6,7 +6,7 @@ import "./index.less";
 const CommList = memo(props => {
     const { ListArr } = props;
     return (
-        <div className="compList">
+        <div className="kxhdList">
             {ListArr.map((item, index) => {
                 return <Card key={item.id + "=" + index} {...item} />;
             })}

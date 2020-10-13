@@ -13,6 +13,7 @@
             justify-content: space-between;
             margin-bottom: 50px;
             .videoSec {
+                width: 700px;
                 .title {
                     width: 100%;
                     font-size: 24px;
@@ -26,7 +27,7 @@
                     justify-content: center;
                     margin-top: 30px;
                     .time {
-                        margin-left: 58px;
+                        margin-left: 5px;
                     }
                 }
                 .player {
@@ -73,37 +74,73 @@
                     margin-top: 18px;
                 }
             }
-            .downBtn {
-                width: 172px;
-                height: 48px;
-                text-align: center;
-                line-height: 48px;
-                background-color: #00b17d;
-                border-radius: 5px;
-                margin: 50px auto;
-                color: #fff;
-                font-size: 24px;
-                position: absolute;
-                bottom: 10px;
-                left: 50%;
-                transform: translate(-50%, 0);
-                cursor: pointer;
+            .downAndCollect {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .downBtn {
+                    width: 172px;
+                    height: 48px;
+                    text-align: center;
+                    line-height: 48px;
+                    background-color: #00b17d;
+                    border-radius: 5px;
+                    margin: 50px auto;
+                    color: #fff;
+                    font-size: 24px;
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    cursor: pointer;
+                }
             }
         }
         .videoList {
-            padding: 30px;
+            padding: 0 30px;
+            overflow-y: auto;
+            height: 500px;
             .videoLink {
                 height: 60px;
                 font-size: 16px;
                 font-family: "microsoft yahei";
                 color: #000;
                 line-height: 60px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
                 border-top: 1px solid #cccccc;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                span {
+                    width: 83%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .a {
+                    width: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                        width: 100%;
+                    }
+                }
             }
         }
+    }
+    .checkWrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttonWrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
     }
 }
 
@@ -119,6 +156,7 @@
             width: 95%;
             margin: 0 auto;
             .videoSec {
+                overflow: hidden;
                 .title {
                     width: 100%;
                     font-size: 24px;
@@ -207,11 +245,40 @@
                 font-family: "microsoft yahei";
                 color: #000;
                 line-height: 60px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
                 border-top: 1px solid #cccccc;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    width: 85%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .a {
+                    width: 0.3rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                        width: 100%;
+                    }
+                }
             }
         }
+    }
+    .checkWrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttonWrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
     }
 }

@@ -5,9 +5,14 @@ import "../mock/listmock";
 import { Breadcrumb } from "antd";
 
 import CommList from "./../comp/list";
-
+import cookie from "react-cookies";
 const Index = memo(() => {
     const [activeArr, setActiveArr] = useState([]);
+    const [titleArr, setTitleArr] = useState({
+        breadCrumb: ["首页", "虚拟科技馆", "虚拟场馆"],
+        menu: ["州别", "国家"],
+    });
+    const [language, setLanguage] = useState("zh_CN");
     useEffect(() => {
         axios
             .get("/active/list")
@@ -17,6 +22,15 @@ const Index = memo(() => {
             .catch(err => {
                 console.log(err);
             });
+    }, []);
+    useEffect(() => {
+        if (cookie.load("_locale") === "en") {
+            setLanguage("en");
+            setTitleArr({
+                breadCrumb: ["home", "Virtual Science Museum", "Virtual Tour"],
+                menu: ["Area", "Country"],
+            });
+        }
     }, []);
     const chageTab = useCallback((index, tab) => {
         const _activeArr = [...activeArr];

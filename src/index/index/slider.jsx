@@ -15,6 +15,7 @@ const Slider = memo(props => {
                 nextEl: ".banner_next",
                 prevEl: ".banner_prev",
             },
+            loop: true,
         });
     }, []);
     return (
@@ -24,13 +25,20 @@ const Slider = memo(props => {
                     {sliderData.map(item => {
                         return (
                             <div className="swiper-slide" key={item.id}>
-                                <a alt="" href="">
-                                    <img src="./img/index/slider/banner.png" />
+                                <a
+                                    alt=""
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={window.baseUrl + item.imgUrl} />
                                 </a>
                                 <div className="banner_mask">
-                                    <span className="hot">
-                                        <img src="./img/index/slider/hot.png" />
-                                    </span>
+                                    {item.tag === "Hot" && (
+                                        <span className="hot">
+                                            <img src="./img/index/slider/hot.png" />
+                                        </span>
+                                    )}
                                     <span className="banner_text">
                                         {item.title}
                                     </span>

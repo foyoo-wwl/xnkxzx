@@ -1,27 +1,209 @@
-.contentWrap {
-  width: 100%;
-  overflow: hidden;
+@media screen and (min-width: 750px) {
+  .contentWrap {
+    width: 100%;
+    overflow: hidden;
+  }
+  .contentWrap .tabWrap {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 50px;
+    font-size: 30px;
+    position: fixed;
+  }
+  .contentWrap .tabWrap li {
+    margin: 0 50px;
+    background-color: red;
+    cursor: pointer;
+  }
+  .contentWrap .liSec {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    background-color: orange;
+    font-size: 200px;
+    line-height: 500px;
+  }
+  .articleWrap {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .articleWrap .articleTitle {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 50px;
+  }
+  .articleWrap .articleBody {
+    font-size: 18px;
+    margin-top: 20px;
+    min-height: 400px;
+  }
+  .articleWrap .time {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .articleWrap .time .collectIcon {
+    width: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .articleWrap .time .collectIcon svg {
+    width: 100%;
+  }
+  .contentListWrap {
+    width: 100%;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .contentListWrap .tabWrap {
+    width: 260px;
+    overflow: hidden;
+    float: left;
+    max-height: 600px;
+    overflow: auto;
+  }
+  .contentListWrap .tabWrap li {
+    border-bottom: 1px solid #fff;
+    background: #e4edf5;
+    font-size: 16px;
+    list-style: none;
+    display: block;
+    width: 100%;
+    line-height: 30px;
+    text-align: left;
+    color: #333;
+    box-sizing: border-box;
+    padding: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .contentListWrap .listWrap {
+    width: 68%;
+    overflow: hidden;
+    float: right;
+  }
+  .contentListWrap .listWrap .liSec .re-tt1 {
+    display: block;
+    font-size: 20px;
+    color: #0d57a7;
+    line-height: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 2px solid #00a2ff;
+    position: relative;
+    padding-left: 23px;
+  }
+  .contentListWrap .fix {
+    position: fixed;
+    top: 0;
+  }
 }
-.contentWrap .tabWrap {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  line-height: 50px;
-  font-size: 30px;
-  position: fixed;
-}
-.contentWrap .tabWrap li {
-  margin: 0 50px;
-  background-color: red;
-  cursor: pointer;
-}
-.contentWrap .liSec {
-  width: 100%;
-  height: 500px;
-  margin-bottom: 50px;
-  background-color: orange;
-  font-size: 200px;
-  line-height: 500px;
+@media screen and (max-width: 750px) {
+  .contentWrap {
+    width: 100%;
+    overflow: hidden;
+  }
+  .contentWrap .tabWrap {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 50px;
+    font-size: 30px;
+    position: fixed;
+  }
+  .contentWrap .tabWrap li {
+    margin: 0 50px;
+    background-color: red;
+    cursor: pointer;
+  }
+  .contentWrap .liSec {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    background-color: orange;
+    font-size: 200px;
+    line-height: 500px;
+  }
+  .articleWrap {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .articleWrap .articleTitle {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 50px;
+  }
+  .articleWrap .articleBody {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .articleWrap .time {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .contentListWrap {
+    width: 100%;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .contentListWrap .tabWrap {
+    width: 260px;
+    overflow: hidden;
+    float: left;
+    display: none;
+  }
+  .contentListWrap .tabWrap li {
+    border-bottom: 1px solid #fff;
+    background: #e4edf5;
+    font-size: 16px;
+    list-style: none;
+    display: block;
+    width: 100%;
+    line-height: 30px;
+    text-align: left;
+    color: #333;
+    box-sizing: border-box;
+    padding: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .contentListWrap .listWrap {
+    width: 95%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .contentListWrap .listWrap .liSec .re-tt1 {
+    display: block;
+    font-size: 20px;
+    color: #0d57a7;
+    line-height: 30px;
+    border-bottom: 2px solid #00a2ff;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .contentListWrap .fix {
+    position: fixed;
+    top: 0;
+  }
 }
