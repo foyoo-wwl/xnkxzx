@@ -15,6 +15,7 @@ const Kxhdal = memo(props => {
         } else {
             setTitle(kxhdalData.title);
         }
+        console.log(kxhdalData);
     }, []);
     return (
         <div className="kxhdalWrap">

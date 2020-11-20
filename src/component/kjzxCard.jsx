@@ -15,19 +15,17 @@ const KjzyCard = memo(props => {
     const t1 = "/detail/";
     const t2 = "/detaillist/";
     return (
-        <div className="kjzy_comm_source">
+        <NavLink
+            className="kjzy_comm_source"
+            to={type === 1 ? t1 + id : t2 + id}
+        >
             <div
                 className="kjzy_commImg"
                 style={{ backgroundImage: "url(" + imgUrl + ")" }}
             ></div>
 
             <div className="kjzy_commCon">
-                <NavLink
-                    className="kjzy_txt"
-                    to={type === 1 ? t1 + id : t2 + id}
-                >
-                    {title}
-                </NavLink>
+                <div className="kjzy_txt">{title}</div>
                 <div className="kjzy_content">{abstract}</div>
                 {/* <div className="kjzy_source">
                     <div className="source">
@@ -37,7 +35,7 @@ const KjzyCard = memo(props => {
                     <div className="time">{time}</div>
                 </div> */}
             </div>
-        </div>
+        </NavLink>
     );
 });
 

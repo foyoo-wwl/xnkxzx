@@ -34,11 +34,10 @@ const kxhdCard = memo(props => {
     };
     const downVideo = () => {
         if (checkFlag) {
-            console.log(downLink);
             const aLink = document.createElement("a");
             document.body.appendChild(aLink);
             aLink.style.display = "none";
-            aLink.href = downLink;
+            aLink.href = "http://www.brvsc.org.cn/article?path=" + downLink;
             aLink.target = "_blank";
             aLink.click();
             document.body.removeChild(aLink);
